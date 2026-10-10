@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q VideoGrab.zip
+      - run: printf "android.useAndroidX=true\norg.gradle.jvmargs=-Xmx3g\n" > VideoGrab/gradle.properties
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
